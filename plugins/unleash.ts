@@ -19,13 +19,6 @@ export default defineNuxtPlugin(nuxtApp => {
     nuxtApp.vueApp.use(unleashPlugin, { unleashClient })
   }
 
-  if (process.server) {
-    console.info(
-      'Here are all the toggles we know of:',
-      unleashClient.getAllToggles()
-    )
-  }
-
   return {
     provide: {
       unleashClient
